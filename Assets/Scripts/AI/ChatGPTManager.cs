@@ -7,16 +7,21 @@ using TMPro;
 public class ChatGPTManager : MonoBehaviour
 {
     public OnResponseEvent onResponse;
+    public ChatGPTManager instance { get; private set; }
 
     [System.Serializable]
     public class OnResponseEvent : UnityEvent<string> { };
 
-    private OpenAIApi openAI = new OpenAIApi("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", "org-2Iy83XZfigtCwVWJsL1jnJ4i");
+    private OpenAIApi openAI = new OpenAIApi("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", "org-2Iy83XZfigtCwVWJsL1jnJ4i");
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
 
-    public async void askChatGpt(TextMeshProUGUI newText) {
+    public void askChatGpt(TextMeshProUGUI newText) {
+        askChatGpt(newText.text);
+    }
+
+    public async void askChatGpt(string newText) {
         ChatMessage chatMessage = new ChatMessage();
-        chatMessage.Content = newText.text;
+        chatMessage.Content = newText;
         chatMessage.Role = "user";
 
         chatMessages.Add(chatMessage);
@@ -37,10 +42,14 @@ public class ChatGPTManager : MonoBehaviour
 
 	}
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+	private void Awake() {
+		instance = this;
+	}
+
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
     {
-        
+        askChatGpt("This is a high fantasy world and I want you to tell me the story like a interactive visual novel, you will play as the narrator and the npc's, i will respond as either what my character will say or do, this response should stay open ended. start of giving me a short descriptions of where I am and then ask me what who I am playing as. say everything as if your a dm and keep your responses to a paragraph or so and seperate descriptions and conversation by :");
     }
 
     // Update is called once per frame
