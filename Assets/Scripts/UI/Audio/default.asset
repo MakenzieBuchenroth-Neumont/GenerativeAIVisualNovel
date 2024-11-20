@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c89af5653ea1b44184dac3dff8bae1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 34072513f21bf5449b65ce414851c189, type: 3}
   m_Name: default
   m_EditorClassIdentifier: 
   id: default
@@ -18,4 +18,4 @@ MonoBehaviour:
   frequencyLevel: 3
   minPitch: 0.75
   maxPitch: 2
-  stopAudioSource: 1
+  stopAudioSource: 0

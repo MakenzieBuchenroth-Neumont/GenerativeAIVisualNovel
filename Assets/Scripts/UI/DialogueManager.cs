@@ -42,6 +42,9 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string AUDIO_TAG = "audio";
 
+    [Header("Play Dialogue")]
+    [SerializeField] private TextAsset inkJSON;
+
     private void Awake()
     {
         if (instance != null)
@@ -77,6 +80,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         InitializeAudioInfoDictionary();
+
+        EnterDialogueMode(inkJSON);
     }
 
     private void InitializeAudioInfoDictionary()
