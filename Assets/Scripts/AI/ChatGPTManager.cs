@@ -12,7 +12,7 @@ public class ChatGPTManager : MonoBehaviour
     [System.Serializable]
     public class OnResponseEvent : UnityEvent<string> { };
 
-    private OpenAIApi openAI = new OpenAIApi("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", "org-2Iy83XZfigtCwVWJsL1jnJ4i");
+    private OpenAIApi openAI = new OpenAIApi();
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
 
     public void askChatGpt(TextMeshProUGUI newText) {
