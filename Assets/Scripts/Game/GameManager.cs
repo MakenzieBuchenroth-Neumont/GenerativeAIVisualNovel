@@ -1,3 +1,6 @@
+using Ink.Parsed;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,9 +28,26 @@ public class GameManager : MonoBehaviour
     }
 
     private void newText(object sender, ChatGPTManager.onResponseEventArgs e) {
-		string[] seperators = { ". ", ".", "\n" };
+		string[] seperators = { ". ", ".", "\n", ":", '"'.ToString()};
         sentences = e.response.Split(seperators, System.StringSplitOptions.None);
 		currentResponse = 0;
+		//check for empty sentences
+		List<string> finalsenteces = new List<string>();
+		foreach (string s in sentences) {
+			if (s == null || s.Length == 0) {
+
+			} else {
+				finalsenteces.Add(s);
+			}
+		}
+		sentences = finalsenteces.ToArray();
+
+        //add periods to the end.
+        for (int i = 0; i < sentences.Length; i++)
+        {
+			sentences[i] = sentences[i].Insert(sentences[i].Length, ".");
+        }
+
 		ContinueStory();
     }
 

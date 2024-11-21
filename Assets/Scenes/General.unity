@@ -164,6 +164,10 @@ PrefabInstance:
       value: 1.83
       objectReference: {fileID: 0}
     - target: {fileID: 1695145920153134980, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
+      propertyPath: m_text
+      value: Isaac
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695145920153134980, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
       propertyPath: m_fontColor.b
       value: 0.11372549
       objectReference: {fileID: 0}
