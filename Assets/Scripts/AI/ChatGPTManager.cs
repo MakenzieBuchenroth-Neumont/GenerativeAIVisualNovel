@@ -52,10 +52,9 @@ public class ChatGPTManager : MonoBehaviour
 		instance = this;
 	}
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
-    {
-        askChatGpt("This is a high fantasy world and I want you to tell me the story like a interactive visual novel, you will play as the narrator and the npc's, i will respond as either what my character will say or do, this response should stay open ended. start of giving me a short descriptions of where I am and then ask me what who I am playing as. say everything as if your a dm and keep your responses to a paragraph or so");
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start() {
+        askChatGpt("This is a high fantasy world, you will be the dm, if say a line please do Narrator:Line please precede every line with who is speaking. start off with describing the setting, then asking about my character. dont use quotation marks at all.");
     }
 
     // Update is called once per frame
