@@ -28,12 +28,15 @@ Properties {
 	_ReflectOutlineColor	("Outline Color", Color) = (0,0,0,1)
 	_Cube 					("Reflection Cubemap", Cube) = "black" { /* TexGen CubeReflect */ }
 	_EnvMatrixRotation  	("Texture Rotation", vector) = (0, 0, 0, 0)
+
 	[HDR]_SpecColor		    ("Specular Color", Color) = (0,0,0,1)
+
 
 	_FaceShininess		("Face Shininess", Range(0,1)) = 0
 	_OutlineShininess	("Outline Shininess", Range(0,1)) = 0
 
 	[HDR]_GlowColor		("Color", Color) = (0, 1, 0, 0.5)
+
 	_GlowOffset			("Offset", Range(-1,1)) = 0
 	_GlowInner			("Inner", Range(0,1)) = 0.05
 	_GlowOuter			("Outer", Range(0,1)) = 0.05

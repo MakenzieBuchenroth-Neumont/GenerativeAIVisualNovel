@@ -20,6 +20,7 @@ Properties {
 
 	_CullMode("Cull Mode", Float) = 0
 	_ColorMask("Color Mask", Float) = 15
+
 }
 
 SubShader {
@@ -90,6 +91,7 @@ SubShader {
 			vert.xy += (vert.w * 0.5) / _ScreenParams.xy;
 
 			OUT.vertex = UnityPixelSnap(UnityObjectToClipPos(vert));
+
 			OUT.color = v.color;
 			OUT.color *= _Color;
 			OUT.color.rgb *= _DiffusePower;
@@ -101,6 +103,7 @@ SubShader {
 			// Clamp _ClipRect to 16bit.
 			float4 clampedRect = clamp(_ClipRect, -2e10, 2e10);
 			OUT.mask = float4(vert.xy * 2 - clampedRect.xy - clampedRect.zw, 0.25 / (0.25 * half2(_MaskSoftnessX, _MaskSoftnessY) + pixelSize.xy));
+
 
 			return OUT;
 		}

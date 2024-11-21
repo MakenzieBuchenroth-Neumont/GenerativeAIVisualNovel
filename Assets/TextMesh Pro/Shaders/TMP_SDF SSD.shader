@@ -4,10 +4,12 @@ Properties {
     _FaceTex            ("Face Texture", 2D) = "white" {}
     _FaceUVSpeedX       ("Face UV Speed X", Range(-5, 5)) = 0.0
     _FaceUVSpeedY       ("Face UV Speed Y", Range(-5, 5)) = 0.0
+
     [HDR]_FaceColor     ("Face Color", Color) = (1,1,1,1)
     _FaceDilate         ("Face Dilate", Range(-1,1)) = 0
 
     [HDR]_OutlineColor  ("Outline Color", Color) = (0,0,0,1)
+
     _OutlineTex         ("Outline Texture", 2D) = "white" {}
     _OutlineUVSpeedX    ("Outline UV Speed X", Range(-5, 5)) = 0.0
     _OutlineUVSpeedY    ("Outline UV Speed Y", Range(-5, 5)) = 0.0
@@ -21,7 +23,9 @@ Properties {
     _BevelRoundness     ("Bevel Roundness", Range(0,1)) = 0
 
     _LightAngle         ("Light Angle", Range(0.0, 6.2831853)) = 3.1416
+
     [HDR]_SpecularColor ("Specular", Color) = (1,1,1,1)
+
     _SpecularPower      ("Specular", Range(0,4)) = 2.0
     _Reflectivity       ("Reflectivity", Range(5.0,15.0)) = 10
     _Diffuse            ("Diffuse", Range(0,1)) = 0.5
@@ -37,13 +41,17 @@ Properties {
     _EnvMatrixRotation  ("Texture Rotation", vector) = (0, 0, 0, 0)
 
 
+
     [HDR]_UnderlayColor ("Border Color", Color) = (0,0,0, 0.5)
+
     _UnderlayOffsetX    ("Border OffsetX", Range(-1,1)) = 0
     _UnderlayOffsetY    ("Border OffsetY", Range(-1,1)) = 0
     _UnderlayDilate     ("Border Dilate", Range(-1,1)) = 0
     _UnderlaySoftness   ("Border Softness", Range(0,1)) = 0
 
+
     [HDR]_GlowColor     ("Color", Color) = (0, 1, 0, 0.5)
+
     _GlowOffset         ("Offset", Range(-1,1)) = 0
     _GlowInner          ("Inner", Range(0,1)) = 0.05
     _GlowOuter          ("Outer", Range(0,1)) = 0.05
@@ -109,7 +117,9 @@ SubShader {
     Blend One OneMinusSrcAlpha
     ColorMask[_ColorMask]
 
+
     Pass {
+
         CGPROGRAM
         #pragma target 3.0
         #pragma vertex VertShader
@@ -128,16 +138,19 @@ SubShader {
         #include "TMPro.cginc"
 
         struct vertex_t {
+
             UNITY_VERTEX_INPUT_INSTANCE_ID
             float4	position        : POSITION;
             float3	normal          : NORMAL;
             float4	color           : COLOR;
+
             float2	texcoord0       : TEXCOORD0;
             float2	texcoord1       : TEXCOORD1;
         };
 
 
         struct pixel_t {
+
             UNITY_VERTEX_INPUT_INSTANCE_ID
             UNITY_VERTEX_OUTPUT_STEREO
             float4	position        : SV_POSITION;
@@ -147,10 +160,12 @@ SubShader {
             float2	mask            : TEXCOORD2;		// Position in object space(xy)
             float3	viewDir         : TEXCOORD3;
 
+
         #if (UNDERLAY_ON || UNDERLAY_INNER)
             float2	texcoord2       : TEXCOORD4;
             float4	underlayColor   : COLOR1;
         #endif
+
             float4 textures         : TEXCOORD5;
         };
 
@@ -158,7 +173,9 @@ SubShader {
         float4 _FaceTex_ST;
         float4 _OutlineTex_ST;
 
+
         float4 SRGBToLinear(float4 rgba) {
+
             return float4(lerp(rgba.rgb / 12.92f, pow((rgba.rgb + 0.055f) / 1.055f, 2.4f), step(0.04045f, rgba.rgb)), rgba.a);
         }
 
@@ -171,7 +188,9 @@ SubShader {
             UNITY_TRANSFER_INSTANCE_ID(input,output);
             UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(output);
 
+
             float bold = step(input.texcoord1.y, 0);
+
 
             float4 vert = input.position;
             vert.x += _VertexOffsetX;
@@ -182,19 +201,24 @@ SubShader {
             float weight = lerp(_WeightNormal, _WeightBold, bold) / 4.0;
             weight = (weight + _FaceDilate) * _ScaleRatioA * 0.5;
 
+
         #if (UNDERLAY_ON || UNDERLAY_INNER)
+
             float4 underlayColor = _UnderlayColor;
             underlayColor.rgb *= underlayColor.a;
 
             float x = -(_UnderlayOffsetX * _ScaleRatioC) * _GradientScale / _TextureWidth;
             float y = -(_UnderlayOffsetY * _ScaleRatioC) * _GradientScale / _TextureHeight;
             float2 bOffset = float2(x, y);
+
         #endif
+
 
             // Generate UV for the Masking Texture
             float4 clampedRect = clamp(_ClipRect, -2e10, 2e10);
 
             // Support for texture tiling and offset
+
             float2 textureUV = UnpackUV(input.texcoord1.x);
             float2 faceUV = TRANSFORM_TEX(textureUV, _FaceTex);
             float2 outlineUV = TRANSFORM_TEX(textureUV, _OutlineTex);
@@ -204,16 +228,19 @@ SubShader {
             color = SRGBToLinear(input.color);
         #endif
 
+
             output.position = vPosition;
             output.color = color;
             output.atlas = input.texcoord0;
             output.weight = weight;
             output.mask = half2(vert.xy * 2 - clampedRect.xy - clampedRect.zw);
             output.viewDir = mul((float3x3)_EnvMatrix, _WorldSpaceCameraPos.xyz - mul(unity_ObjectToWorld, vert).xyz);
+
         #if (UNDERLAY_ON || UNDERLAY_INNER)
             output.texcoord2 = input.texcoord0 + bOffset;
             output.underlayColor = underlayColor;
         #endif
+
             output.textures = float4(faceUV, outlineUV);
 
             return output;
@@ -226,9 +253,11 @@ SubShader {
 
             float c = tex2D(_MainTex, input.atlas).a;
 
+
             float2 pixelSize = float2(ddx(input.atlas.y), ddy(input.atlas.y));
             pixelSize *= _TextureWidth * .75;
             float scale = rsqrt(dot(pixelSize, pixelSize)) * _GradientScale * (_Sharpness + 1);
+
 
             float weight = input.weight;
             float bias = (.5 - weight) + (.5 / scale);
@@ -247,7 +276,9 @@ SubShader {
 
             faceColor = GetColor(sd, faceColor, outlineColor, outline, softness);
 
+
         #if BEVEL_ON
+
             float3 dxy = float3(0.5 / _TextureWidth, 0.5 / _TextureHeight, 0);
             float3 n = GetSurfaceNormal(input.atlas, weight, dxy);
 
@@ -264,6 +295,7 @@ SubShader {
 
             fixed4 reflcol = texCUBE(_Cube, reflect(input.viewDir, -n));
             faceColor.rgb += reflcol.rgb * lerp(_ReflectFaceColor.rgb, _ReflectOutlineColor.rgb, saturate(sd + outline * 0.5)) * faceColor.a;
+
         #endif
 
         #if (UNDERLAY_ON || UNDERLAY_INNER)
@@ -303,6 +335,7 @@ SubShader {
 
             ENDCG
         }
+
 }
 
 Fallback "TextMeshPro/Mobile/Distance Field"
