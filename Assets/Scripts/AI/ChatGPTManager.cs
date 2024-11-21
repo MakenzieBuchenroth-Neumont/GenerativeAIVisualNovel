@@ -3,14 +3,20 @@ using OpenAI;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using TMPro;
+using System;
 
 public class ChatGPTManager : MonoBehaviour
 {
-    public OnResponseEvent onResponse;
-    public ChatGPTManager instance { get; private set; }
+   
+    public static ChatGPTManager instance { get; private set; }
 
-    [System.Serializable]
-    public class OnResponseEvent : UnityEvent<string> { };
+
+    public EventHandler<onResponseEventArgs> OnResponseEvent;
+
+    public class onResponseEventArgs : EventArgs {
+        public string response;
+    }
+
 
     private OpenAIApi openAI = new OpenAIApi();
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
@@ -37,7 +43,7 @@ public class ChatGPTManager : MonoBehaviour
             chatMessages.Add(chatReponse);
 
             Debug.Log(chatReponse.Content.ToString()); 
-            onResponse.Invoke(chatReponse.Content);
+            OnResponseEvent.Invoke(this, new onResponseEventArgs { response = chatReponse.Content });
         }
 
 	}

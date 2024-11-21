@@ -32,9 +32,9 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
 
-    private static DialogueManager instance;
-    private Coroutine displayLineCoroutine;
-    private bool canContinueToNextLine = false;
+    public static DialogueManager instance;
+    public Coroutine displayLineCoroutine;
+    public bool canContinueToNextLine = false;
     private bool canSkip = false;
     private bool submitSkip = false;
 
@@ -66,22 +66,18 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        //dialoguePanel.SetActive(false);
 
         // get layout animator
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
-        choicesText = new TextMeshProUGUI[choices.Length];
-        int index = 0;
-        foreach (GameObject choice in choices)
-        {
-            choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
-            index++;
-        }
+
+ 
+
 
         InitializeAudioInfoDictionary();
 
-        EnterDialogueMode(inkJSON);
+        //EnterDialogueMode(inkJSON);
     }
 
     private void InitializeAudioInfoDictionary()
@@ -141,9 +137,6 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
-        currentStory.UnbindExternalFunction("ShowBuyMenu");
-        currentStory.UnbindExternalFunction("CloseBuyMenu");
-        currentStory.UnbindExternalFunction("ShowSellMenu");
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -180,7 +173,7 @@ public class DialogueManager : MonoBehaviour
         canSkip = true;
     }
 
-    private IEnumerator DisplayLine(string line)
+    public IEnumerator DisplayLine(string line)
     {
         // empty the dialogue text
         dialogueText.text = line;
@@ -217,7 +210,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         continueIcon.SetActive(true);
-        DisplayChoices();
+        //DisplayChoices();
 
         canContinueToNextLine = true;
         canSkip = false;
