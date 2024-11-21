@@ -4,12 +4,14 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance {get; private set; }
 	private string[] sentences;
 	private string[] names;
+	private Texture[] characterImages;
 	int currentResponse = 0;
 	bool responded = false;
 	[SerializeField] GameObject inputfield;
@@ -17,7 +19,10 @@ public class GameManager : MonoBehaviour
 	[SerializeField] TMP_InputField textInput;
 	[SerializeField] TextMeshProUGUI text;
 	[SerializeField] TextMeshProUGUI nametext;
+	[SerializeField] RawImage characterImage;
+	[SerializeField] CharacterListSO characters;
 
+	public static List<CharacterListSO.Characters> charactersnames = new List<CharacterListSO.Characters>();
 
 	private void Awake() {
 		instance = this;
@@ -26,7 +31,10 @@ public class GameManager : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
     {
-        ChatGPTManager.instance.OnResponseEvent += newText;
+		for (int i = 1; (CharacterListSO.Characters)i != CharacterListSO.Characters.FemaleHumanChild; i++) {
+			charactersnames.Add((CharacterListSO.Characters)i);
+		}
+		ChatGPTManager.instance.OnResponseEvent += newText;
         DontDestroyOnLoad(gameObject);
 		inputfield.SetActive(false);
 		Waiting.SetActive(true);
@@ -42,7 +50,7 @@ public class GameManager : MonoBehaviour
 		//check for empty sentences
 		List<string> finalsenteces = new List<string>();
 		foreach (string s in sentences) {
-			if (s == null || s.Length == 0) {
+			if (s == null || s.Length == 0 || s == " ") {
 
 			} else {
 				finalsenteces.Add(s);
@@ -52,16 +60,21 @@ public class GameManager : MonoBehaviour
 
         //check if sentence uses name
 		names = new string[sentences.Length];
+		characterImages = new Texture[sentences.Length];
 		string lastname = "Narrator";
+		Texture lastCharacter = null;
         for (int i = 0; i < sentences.Length; i++)
         {
 			if (sentences[i].Contains(":")) {
 				string[] output = sentences[i].Split(":");
 				names[i] = output[0];
 				lastname = output[0];
-				sentences[i] = output[1];
+				characterImages[i] = characters.getCharacter((CharacterListSO.valueOf(output[1])));
+				lastCharacter = characterImages[i];
+				sentences[i] = output[2];
 			} else {
 				names[i] = lastname;
+				characterImages[i] = lastCharacter;
 			}
         }
 
@@ -93,6 +106,7 @@ public class GameManager : MonoBehaviour
 
 			DialogueManager.instance.displayLineCoroutine = StartCoroutine(DialogueManager.instance.DisplayLine(sentences[currentResponse]));
 			nametext.text = names[currentResponse];
+			characterImage.texture = characterImages[currentResponse];
 			currentResponse++;
 		} else {
 			inputfield.SetActive(true);
@@ -103,8 +117,8 @@ public class GameManager : MonoBehaviour
 
 	public void respond() {
 		//Put check if empty
-		ChatGPTManager.instance.askChatGpt(textInput.text);
 		inputfield.SetActive(false);
+		ChatGPTManager.instance.askChatGpt(textInput.text);
 		responded = true;
 		textInput.text = "";
 		Waiting.SetActive(true);

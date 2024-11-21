@@ -838,6 +838,8 @@ MonoBehaviour:
   textInput: {fileID: 1190030072}
   text: {fileID: 259114977}
   nametext: {fileID: 114838617}
+  characterImage: {fileID: 1033714397}
+  characters: {fileID: 11400000, guid: 3fc203b3bce53ed448351b127ac37598, type: 2}
 --- !u!4 &567003115
 Transform:
   m_ObjectHideFlags: 0
@@ -1010,7 +1012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 548a425aecb437944af1572a71ada5e5, type: 3}
+  m_Texture: {fileID: 2800000, guid: 375c40fbc46a47842a7cdf4bb78cbfc0, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

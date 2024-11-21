@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071b909e808f9804c8b2380f816060db, type: 3}
+  m_Name: CharacterListSO
+  m_EditorClassIdentifier: 
+  MaleHumanPaladin: {fileID: 2800000, guid: c0371706d2da16c45b4d3ac0349e2d6f, type: 3}
+  MaleHumanRouge: {fileID: 2800000, guid: 356730e67ec570f4fb0ebfa565c80bcd, type: 3}
+  MaleHumanWizard: {fileID: 2800000, guid: 78e906d7f389c6c41a00095c3b5bcd0e, type: 3}
+  MaleHumanSorcerer: {fileID: 2800000, guid: 0ae7ae9ea47c1314e8a12411b26e6640, type: 3}
+  MaleHumanBard: {fileID: 2800000, guid: ad4cb0494d2effb4bb5b208a6cf12909, type: 3}
+  MaleHumanArtificer: {fileID: 2800000, guid: 1ac525e82791d4d4faa596b3a2a1f336, type: 3}
+  MaleHumanCivilian: {fileID: 2800000, guid: c563c7d0c02776a4b8b7c3d04282f289, type: 3}
+  FemaleHumanCivilian: {fileID: 2800000, guid: c563c7d0c02776a4b8b7c3d04282f289, type: 3}
+  MaleHumanChild: {fileID: 2800000, guid: 50e565df70d7ca64cb079079bc2d5c52, type: 3}
+  FemaleHumanChild: {fileID: 2800000, guid: fcfe0a4a3ba3ad24c9fc2a6aae608db4, type: 3}
+  Null: {fileID: 2800000, guid: 375c40fbc46a47842a7cdf4bb78cbfc0, type: 3}

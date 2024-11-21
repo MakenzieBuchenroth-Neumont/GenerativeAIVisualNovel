@@ -54,7 +54,13 @@ public class ChatGPTManager : MonoBehaviour
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start() {
-        askChatGpt("This is a high fantasy world, you will be the dm, if say a line please do Narrator:Line please precede every line with who is speaking. start off with describing the setting, then asking about my character. dont use quotation marks at all.");
+        string askString = "This is a high fantasy world, you will be the dm, if say a line please do Narrator:Image:Line please precede every line with who is speaking. Image is the name of the image of the character, we have ";
+        foreach (var c in CharacterListSO.charactersnames) {
+            askString += "\"" + c + "\", ";
+        }
+        askString += ".If the narrator is speaking say Image is \"Null\" and name as Narrator two examples are \"Narrator:Null:This is the world eldoria.\" and \"Issac:MaleHumanChild:Hi There, I'm isaac. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.";
+
+		askChatGpt("This is a high fantasy world, you will be the dm, if say a line please do Narrator:Image:Line please precede every line with who is speaking. Image is the name of the image of the character, we have \"MaleHumanPaladin\", \"MaleHumanRouge\", \"MaleHumanWizard\", \"MaleHumanSorcerer\", \"MaleHumanBard\", \"MaleHumanArtificer\", \"MaleHumanCivilian\", \"FemaleHumanCivilian\", \"MaleHumanChild\", \"FemaleHumanChild\". you have to use one of the given names for image. If the narrator is speaking say Image is \"Null\" and name as Narrator, two examples are \"Narrator:Null:This is the world eldoria.\" and \"Issac:MaleHumanChild:Hi There, I'm isaac. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.");
     }
 
     // Update is called once per frame
