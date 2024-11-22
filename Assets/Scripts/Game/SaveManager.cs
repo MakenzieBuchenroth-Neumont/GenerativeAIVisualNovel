@@ -3,9 +3,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour {
+
 	public enum DataLabel {
 		TEST_STRING,
-		MESSAGES
+		MESSAGES,
+		MESSAGES1,
+		MESSAGES2,
+		MESSAGES3
 	}
 
 	public static SaveManager instance {get; private set;}
@@ -16,8 +20,7 @@ public class SaveManager : MonoBehaviour {
 
 	private void Awake() {
 		instance = this;
-		PlayerPrefs.DeleteAll();
-		UpdateData();
+		DontDestroyOnLoad(instance);
 	}
 	private void UpdateData() {
 		testString = PlayerPrefs.GetString(DataLabel.TEST_STRING.ToString(), "");
@@ -27,6 +30,25 @@ public class SaveManager : MonoBehaviour {
 	public void setString(DataLabel data, string newString) {
 		PlayerPrefs.SetString(data.ToString(), newString);
 		UpdateData();
+	}
+
+	public void loadSave(int save) {
+		switch (save) {
+			case 1:
+				Messages = PlayerPrefs.GetString(DataLabel.MESSAGES1.ToString(), "");
+				break;
+			case 2:
+				Messages = PlayerPrefs.GetString(DataLabel.MESSAGES2.ToString(), "");
+				break;
+			case 3:
+				Messages = PlayerPrefs.GetString(DataLabel.MESSAGES3.ToString(), "");
+				break;
+			case 4:
+				Messages = "";
+				break;
+		}
+
+		Loader.Load(Loader.scenes.General);
 	}
 
 

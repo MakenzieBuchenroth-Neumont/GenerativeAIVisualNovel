@@ -46,7 +46,6 @@ public class ChatGPTManager : MonoBehaviour
 
             Debug.Log(chatReponse.Content.ToString()); 
             OnResponseEvent.Invoke(this, new onResponseEventArgs { response = chatReponse.Content });
-            save();
         }
 
 	}
@@ -78,13 +77,27 @@ public class ChatGPTManager : MonoBehaviour
         
     }
 
-    public void save() {
+    public void save(int saveint) {
+        switch (saveint) {
+            case 1:
+                save(SaveManager.DataLabel.MESSAGES1);
+                break;
+            case 2:
+                save(SaveManager.DataLabel.MESSAGES1);
+                break;
+            case 3:
+                save(SaveManager.DataLabel.MESSAGES1);
+                break;
+        }
+    }
+
+    public void save(SaveManager.DataLabel label) {
         string SavedString = "";
         foreach (ChatMessage chatMessage in chatMessages) {
             SavedString += chatMessage.Content + "/";
             SavedString += chatMessage.Role + "|";
         }
-        SaveManager.instance.setString(SaveManager.DataLabel.MESSAGES, SavedString);
+        SaveManager.instance.setString(label, SavedString);
     }
 
 	public void load() {
