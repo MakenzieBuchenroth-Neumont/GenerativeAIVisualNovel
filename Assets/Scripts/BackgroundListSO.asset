@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ceced9c8e399348a5b89982829335f, type: 3}
+  m_Name: BackgroundListSO
+  m_EditorClassIdentifier: 
+  Beach: {fileID: 2800000, guid: a4b1ced7dc8e2e74b8c822ed2a81aa9b, type: 3}
+  BirchForest: {fileID: 2800000, guid: d4222c61535626d48aefa274f83191c9, type: 3}
+  OutsideCastle: {fileID: 2800000, guid: 7d442c4a6358935469a0b73d0382cb78, type: 3}
+  CastleBallroom: {fileID: 2800000, guid: 838351ed527714047b5580a29980a8bb, type: 3}
+  CastleGarden: {fileID: 2800000, guid: 238dc88bcab15e844b7392ef87d12148, type: 3}
+  CastleHallway: {fileID: 2800000, guid: cf1f870f25aae784985942356a3fc79f, type: 3}
+  CastleKitchen: {fileID: 2800000, guid: 46105b7ccfab43d4683d3fd90b96d655, type: 3}
+  CastlePathway: {fileID: 2800000, guid: 5e68637401f640f46900aa3980888e4b, type: 3}
+  CastleRoad: {fileID: 2800000, guid: a2db3e236618be84cbb1d06fc160ea78, type: 3}
+  CastlePrison: {fileID: 2800000, guid: cbc722413319d334894947d5ae96b623, type: 3}
+  CastleRuins: {fileID: 2800000, guid: f3a0ef0259c435d4aaa3875f8f3c61b8, type: 3}
+  CastleStairCase: {fileID: 2800000, guid: c282fa5843e898d4a9bb7262cc587dcc, type: 3}
+  CastleThroneRoom: {fileID: 2800000, guid: 30ad0d6c145ea3d4c965a3fdf0cb5722, type: 3}
+  CastleTower: {fileID: 2800000, guid: a800cb56d98e5c14f934d8049307cc94, type: 3}
+  ForestClearing: {fileID: 2800000, guid: 82d14cac4de4b7745bbfff2ad8ef032e, type: 3}
+  SmallCottage: {fileID: 2800000, guid: 16ca19f2a0118fd4d981e8f58576a3a0, type: 3}
+  CottageTavernOutside: {fileID: 2800000, guid: 1ecbf97c8f3fae5428f3db455d43e382, type: 3}
+  CottageInnOutside: {fileID: 2800000, guid: 83a28265287a39d42995126fe0c97858, type: 3}
+  CottageBedroom: {fileID: 2800000, guid: ca6cdaff6c579c64bbe671e7abb5551f, type: 3}
+  CottageHearth: {fileID: 2800000, guid: 6c00e0c424983c747890980b333903e0, type: 3}
+  CottageKitchen: {fileID: 2800000, guid: cb30b996eaa280342b66009d16099aa7, type: 3}
+  CottageInterior: {fileID: 2800000, guid: 0abaf55d4801aa842b4b2d86c42ebfec, type: 3}
+  CottageLibrary: {fileID: 2800000, guid: 71472d353800fb944a2b75b8d9bf7c76, type: 3}
+  CottageTable: {fileID: 2800000, guid: 54d64b7d60e91854f856172004cdadd9, type: 3}
+  ScaryForest: {fileID: 2800000, guid: 816215b154d72a543a877dd324401e92, type: 3}
+  Fields: {fileID: 2800000, guid: 88d8a5c4cb75b4e44a1f32e07bf3451b, type: 3}
+  ForestFire: {fileID: 2800000, guid: 82b564f6795f6684898db50c8119a617, type: 3}
+  MistyForest: {fileID: 2800000, guid: 7b97a1b30c5c6364f8d0459d0ea60cce, type: 3}
+  MountainRange: {fileID: 2800000, guid: cfb5a79cade64454ea3eea6afe6429c4, type: 3}
+  ForestPath: {fileID: 2800000, guid: 50a908aab7b909643b0312e634a45ef1, type: 3}
+  ForestRuins: {fileID: 2800000, guid: c911c9c6b7931bb44b6c95b987713e42, type: 3}
+  SnowyForest: {fileID: 2800000, guid: d80b25a3da47e1c4b8d46023a1b61c3a, type: 3}
+  WizardTowerOutside: {fileID: 2800000, guid: 205eb87b697b1484aa7d64bc4dc63db1, type: 3}
+  DenseForest: {fileID: 2800000, guid: 2eb56b3f9148062419d8e324bc040679, type: 3}
+  Village: {fileID: 2800000, guid: bfdf9f8b274db624188b135dcbac5c36, type: 3}
+  VillageInnInside: {fileID: 2800000, guid: 86fff5de84bf8a04f9e259761f29c1e1, type: 3}
+  VillageTavernInside: {fileID: 2800000, guid: 36d0b6b69e437484182da193bc396ffa, type: 3}
+  VillageShopInside: {fileID: 2800000, guid: b423326e7b1e46d428a5f8025790e283, type: 3}
+  Lake: {fileID: 2800000, guid: 1cfe24d8f7b3c194599832ff9fb12961, type: 3}
+  River: {fileID: 2800000, guid: 55d4eec35af377c4ba464594676abbad, type: 3}
+  Waterfall: {fileID: 2800000, guid: 25f2db3e85009314eb86c3e7395002ba, type: 3}

@@ -59,11 +59,15 @@ public class ChatGPTManager : MonoBehaviour
         Debug.Log(SaveManager.instance.getString(SaveManager.DataLabel.MESSAGES));
         if (SaveManager.instance.getString(SaveManager.DataLabel.MESSAGES) == "" || SaveManager.instance.getString(SaveManager.DataLabel.MESSAGES) == null) {
 
-            string askString = "This is a high fantasy world, you will be the dm, if say a line please do Narrator:Image:Line please precede every line with who is speaking. Image is the name of the image of the character, we have ";
+            string askString = "This is a high fantasy world, you will be the dm, if say a line please do Name:Character:Background:Line please precede every line with who is speaking. Image is the name of the image of the character, we have ";
             foreach (var c in GameManager.charactersnames) {
                 askString += "\"" + c + "\", ";
             }
-            askString += "you have to use one of the given names for image.If the narrator is speaking say Image is \"Null\" and name as Narrator, two examples are \"Narrator:Null:This is the world eldoria.\" and \"Issac:MaleHumanChild:Hi There, I'm isaac. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.";
+            askString += "you have to use one of the given names for Character.If the narrator is speaking say Image is \"Null\" and Name is Narrator. The names for the backgrounds are ";
+			foreach (var c in GameManager.Backgrounds) {
+				askString += "\"" + c + "\", ";
+			}
+			askString += "You have to use one of these given names for the Background. two examples are \"Narrator:Null:BirchForest:This is the forest called whispering woods.\" and \"Issac:MaleHumanChild:Village:Hi There, I'm isaac. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.";
             askChatGpt(askString);
         } else {
             load();

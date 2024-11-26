@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 	private string[] sentences;
 	private string[] names;
 	private Texture[] characterImages;
+	private Texture[] BackgroundImages;
 	int currentResponse = 0;
 	bool responded = false;
 	[SerializeField] GameObject inputfield;
@@ -20,9 +21,12 @@ public class GameManager : MonoBehaviour
 	[SerializeField] TextMeshProUGUI text;
 	[SerializeField] TextMeshProUGUI nametext;
 	[SerializeField] RawImage characterImage;
+	[SerializeField] RawImage backgroundImage;
 	[SerializeField] CharacterListSO characters;
+	[SerializeField] BackgroundListSO backgrounds;
 
 	public static List<CharacterListSO.Characters> charactersnames = new List<CharacterListSO.Characters>();
+	public static List<BackgroundListSO.Backgrounds> Backgrounds = new List<BackgroundListSO.Backgrounds>();
 
 	private void Awake() {
 		instance = this;
@@ -33,6 +37,9 @@ public class GameManager : MonoBehaviour
     {
 		for (int i = 1; (CharacterListSO.Characters)i != CharacterListSO.Characters.FemaleHumanChild; i++) {
 			charactersnames.Add((CharacterListSO.Characters)i);
+		}
+		for (int i = 1; (BackgroundListSO.Backgrounds)i != BackgroundListSO.Backgrounds.Waterfall; i++) {
+			Backgrounds.Add((BackgroundListSO.Backgrounds)i);
 		}
 		ChatGPTManager.instance.OnResponseEvent += newText;
         DontDestroyOnLoad(gameObject);
@@ -61,8 +68,10 @@ public class GameManager : MonoBehaviour
         //check if sentence uses name
 		names = new string[sentences.Length];
 		characterImages = new Texture[sentences.Length];
+		BackgroundImages = new Texture[sentences.Length];
 		string lastname = "Narrator";
 		Texture lastCharacter = null;
+		Texture lastBackground = null;
         for (int i = 0; i < sentences.Length; i++)
         {
 			if (sentences[i].Contains(":")) {
@@ -71,9 +80,12 @@ public class GameManager : MonoBehaviour
 				lastname = output[0];
 				characterImages[i] = characters.getCharacter((CharacterListSO.valueOf(output[1])));
 				lastCharacter = characterImages[i];
-				sentences[i] = output[2];
+				BackgroundImages[i] = backgrounds.getCharacter((BackgroundListSO.valueOf(output[2])));
+				lastBackground = BackgroundImages[i];
+				sentences[i] = output[3];
 			} else {
 				names[i] = lastname;
+				BackgroundImages[i] = lastBackground;
 				characterImages[i] = lastCharacter;
 			}
         }
@@ -107,6 +119,7 @@ public class GameManager : MonoBehaviour
 			DialogueManager.instance.displayLineCoroutine = StartCoroutine(DialogueManager.instance.DisplayLine(sentences[currentResponse]));
 			nametext.text = names[currentResponse];
 			characterImage.texture = characterImages[currentResponse];
+			backgroundImage.texture = BackgroundImages[currentResponse];
 			currentResponse++;
 		} else {
 			inputfield.SetActive(true);

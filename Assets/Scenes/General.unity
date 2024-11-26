@@ -1111,7 +1111,9 @@ MonoBehaviour:
   text: {fileID: 259114977}
   nametext: {fileID: 114838617}
   characterImage: {fileID: 1033714397}
+  backgroundImage: {fileID: 1370603201}
   characters: {fileID: 11400000, guid: 3fc203b3bce53ed448351b127ac37598, type: 2}
+  backgrounds: {fileID: 11400000, guid: 5b1598edd6c5c2f4bbf1c1b24a39fdf4, type: 2}
 --- !u!4 &567003115
 Transform:
   m_ObjectHideFlags: 0
