@@ -63,7 +63,7 @@ public class ChatGPTManager : MonoBehaviour
             foreach (var c in GameManager.charactersnames) {
                 askString += "\"" + c + "\", ";
             }
-            askString += "you have to use one of the given names for Character.If the narrator is speaking say Image is \"Null\" and Name is Narrator. The names for the backgrounds are ";
+            askString += "you have to use one of the given names for Character.If the narrator is speaking say Image is \"Null\" and Name is Narrator, and when making characters give each of them their own unique name just use a Character name for the image used for that character that is closest to what was intended. The names for the backgrounds are ";
 			foreach (var c in GameManager.Backgrounds) {
 				askString += "\"" + c + "\", ";
 			}

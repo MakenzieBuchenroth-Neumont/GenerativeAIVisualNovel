@@ -1,4 +1,6 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,25 +20,38 @@ public class BackgroundListSO : ScriptableObject {
 		CastleRuins,
 		CastleStairCase,
 		CastleThroneRoom,
-		CastleTower,
 		ForestClearing,
 		ScaryForest,
 		WheatFields,
-		ForestFire,
-		MistyForest,
 		MountainRange,
 		ForestPath,
 		ForestRuins,
 		SnowyForest,
-		WizardTowerOutside,
-		DenseForest,
 		Village,
 		VillageInnInside,
 		VillageTavernInside,
 		VillageShopInside,
 		Lake,
-		River,
-		Waterfall
+		AncientLibrary,
+		UndergroundCavern,
+		MysticAltar,
+		DesertOasis,
+		HauntedGraveyard,
+		FloatingIsland,
+		MarketplaceSquare,
+		PirateCove,
+		AbandonedMine,
+		VolcanoSummit,
+		HiddenCaveWaterfall,
+		SunkenShipwreck,
+		EnchantedGlade,
+		BattlefieldRuins,
+		IceCavern,
+		UndergroundDungeon,
+		TempleRuins,
+		FairyGrove,
+		DragonsLair,
+		ObservatoryTower
 
     }
 	public Texture Beach,
@@ -52,30 +67,43 @@ public class BackgroundListSO : ScriptableObject {
 		CastleRuins,
 		CastleStairCase,
 		CastleThroneRoom,
-		CastleTower,
 		ForestClearing,
 		ScaryForest,
 		WheatFields,
-		ForestFire,
-		MistyForest,
 		MountainRange,
 		ForestPath,
 		ForestRuins,
 		SnowyForest,
-		WizardTowerOutside,
-		DenseForest,
 		Village,
 		VillageInnInside,
 		VillageTavernInside,
 		VillageShopInside,
 		Lake,
-		River,
-		Waterfall;
+		AncientLibrary,
+		UndergroundCavern,
+		MysticAltar,
+		DesertOasis,
+		HauntedGraveyard,
+		FloatingIsland,
+		MarketplaceSquare,
+		PirateCove,
+		AbandonedMine,
+		VolcanoSummit,
+		HiddenCaveWaterfall,
+		SunkenShipwreck,
+		EnchantedGlade,
+		BattlefieldRuins,
+		IceCavern,
+		UndergroundDungeon,
+		TempleRuins,
+		FairyGrove,
+		DragonsLair,
+		ObservatoryTower;
 
 	public static List<Backgrounds> charactersnames = new List<Backgrounds>();
 
 	private void Awake() {
-		for (int i = 1; (Backgrounds)i != Backgrounds.Waterfall; i++) {
+		for (int i = 1; (Backgrounds)i != Backgrounds.ObservatoryTower; i++) {
 			charactersnames.Add((Backgrounds)i);
 		}
 	}
@@ -107,18 +135,12 @@ public class BackgroundListSO : ScriptableObject {
 				return CastleStairCase;
 			case Backgrounds.CastleThroneRoom:
 				return CastleThroneRoom;
-			case Backgrounds.CastleTower:
-				return CastleTower;
 			case Backgrounds.ForestClearing:
 				return ForestClearing;
 			case Backgrounds.ScaryForest:
 				return ScaryForest;
 			case Backgrounds.WheatFields:
 				return WheatFields;
-			case Backgrounds.ForestFire:
-				return ForestFire;
-			case Backgrounds.MistyForest:
-				return MistyForest;
 			case Backgrounds.MountainRange:
 				return MountainRange;
 			case Backgrounds.ForestPath:
@@ -127,10 +149,6 @@ public class BackgroundListSO : ScriptableObject {
 				return ForestRuins;
 			case Backgrounds.SnowyForest:
 				return SnowyForest;
-			case Backgrounds.WizardTowerOutside:
-				return WizardTowerOutside;
-			case Backgrounds.DenseForest:
-				return DenseForest;
 			case Backgrounds.Village:
 				return Village;
 			case Backgrounds.VillageInnInside:
@@ -141,12 +159,49 @@ public class BackgroundListSO : ScriptableObject {
 				return VillageShopInside;
 			case Backgrounds.Lake:
 				return Lake;
-			case Backgrounds.River:
-				return River;
-			case Backgrounds.Waterfall:
-				return Waterfall;
 			case Backgrounds.Beach:
 				return Beach;
+			case Backgrounds.AncientLibrary:
+				return AncientLibrary;
+			case Backgrounds.UndergroundCavern:
+				return UndergroundCavern;
+			case Backgrounds.MysticAltar:
+				return MysticAltar;
+			case Backgrounds.DesertOasis:
+				return DesertOasis;
+			case Backgrounds.HauntedGraveyard:
+				return HauntedGraveyard;
+			case Backgrounds.FloatingIsland:
+				return FloatingIsland;
+			case Backgrounds.MarketplaceSquare:
+				return MarketplaceSquare;
+			case Backgrounds.PirateCove:
+				return PirateCove;
+			case Backgrounds.AbandonedMine:
+				return AbandonedMine;
+			case Backgrounds.VolcanoSummit:
+				return VolcanoSummit;
+			case Backgrounds.HiddenCaveWaterfall:
+				return HiddenCaveWaterfall;
+			case Backgrounds.SunkenShipwreck:
+				return SunkenShipwreck;
+			case Backgrounds.EnchantedGlade:
+				return EnchantedGlade;
+			case Backgrounds.BattlefieldRuins:
+				return BattlefieldRuins;
+			case Backgrounds.IceCavern:
+				return IceCavern;
+			case Backgrounds.UndergroundDungeon:
+				return UndergroundDungeon;
+			case Backgrounds.TempleRuins:
+				return TempleRuins;
+			case Backgrounds.FairyGrove:
+				return FairyGrove;
+			case Backgrounds.DragonsLair:
+				return DragonsLair;
+			case Backgrounds.ObservatoryTower:
+				return ObservatoryTower;
+
 		}
 	}
 

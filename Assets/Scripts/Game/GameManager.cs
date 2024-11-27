@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
 		for (int i = 1; (CharacterListSO.Characters)i != CharacterListSO.Characters.FemaleHumanChild; i++) {
 			charactersnames.Add((CharacterListSO.Characters)i);
 		}
-		for (int i = 1; (BackgroundListSO.Backgrounds)i != BackgroundListSO.Backgrounds.Waterfall; i++) {
+		for (int i = 1; (BackgroundListSO.Backgrounds)i != BackgroundListSO.Backgrounds.ObservatoryTower; i++) {
 			Backgrounds.Add((BackgroundListSO.Backgrounds)i);
 		}
 		ChatGPTManager.instance.OnResponseEvent += newText;
