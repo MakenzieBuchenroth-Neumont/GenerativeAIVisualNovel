@@ -20,17 +20,8 @@ public class BackgroundListSO : ScriptableObject {
 		CastleThroneRoom,
 		CastleTower,
 		ForestClearing,
-		SmallCottage,
-		CottageTavernOutside,
-		CottageInnOutside,
-		CottageBedroom,
-		CottageHearth,
-		CottageKitchen,
-		CottageInterior,
-		CottageLibrary,
-		CottageTable,
 		ScaryForest,
-		Fields,
+		WheatFields,
 		ForestFire,
 		MistyForest,
 		MountainRange,
@@ -63,17 +54,8 @@ public class BackgroundListSO : ScriptableObject {
 		CastleThroneRoom,
 		CastleTower,
 		ForestClearing,
-		SmallCottage,
-		CottageTavernOutside,
-		CottageInnOutside,
-		CottageBedroom,
-		CottageHearth,
-		CottageKitchen,
-		CottageInterior,
-		CottageLibrary,
-		CottageTable,
 		ScaryForest,
-		Fields,
+		WheatFields,
 		ForestFire,
 		MistyForest,
 		MountainRange,
@@ -129,28 +111,10 @@ public class BackgroundListSO : ScriptableObject {
 				return CastleTower;
 			case Backgrounds.ForestClearing:
 				return ForestClearing;
-			case Backgrounds.SmallCottage:
-				return SmallCottage;
-			case Backgrounds.CottageTavernOutside:
-				return CottageTavernOutside;
-			case Backgrounds.CottageInnOutside:
-				return CottageInnOutside;
-			case Backgrounds.CottageBedroom:
-				return CottageBedroom;
-			case Backgrounds.CottageHearth:
-				return CottageHearth;
-			case Backgrounds.CottageKitchen:
-				return CottageKitchen;
-			case Backgrounds.CottageInterior:
-				return CottageInterior;
-			case Backgrounds.CottageLibrary:
-				return CottageLibrary;
-			case Backgrounds.CottageTable:
-				return CottageTable;
 			case Backgrounds.ScaryForest:
 				return ScaryForest;
-			case Backgrounds.Fields:
-				return Fields;
+			case Backgrounds.WheatFields:
+				return WheatFields;
 			case Backgrounds.ForestFire:
 				return ForestFire;
 			case Backgrounds.MistyForest:
