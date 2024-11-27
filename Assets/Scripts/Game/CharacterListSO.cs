@@ -15,7 +15,25 @@ public class CharacterListSO : ScriptableObject {
 		MaleHumanCivilian,
 		FemaleHumanCivilian,
         MaleHumanChild,
-        FemaleHumanChild
+		MaleDragonbornArtificer,
+		FemaleDragonbornArtificer,
+		MaleDragonbornBard,
+		FemaleDragonbornBard,
+		MaleDragonbornKnight,
+		FemaleDragonbornKnight,
+		MaleDragonbornPaladin,
+		FemaleDragonbornPaladin,
+		MaleDragonbornRanger,
+		FemaleDragonbornRanger,
+		MaleDragonbornRogue,
+		FemaleDragonbornRogue,
+		MaleDragonbornRoyalty,
+		FemaleDragonbornRoyalty,
+		MaleDragonbornWarlock,
+		FemaleDragonbornWarlock,
+		MaleDragonbornWizard,
+		FemaleDragonbornWizard,
+        FemaleHumanChild,
     }
 	public Texture MaleHumanPaladin,
 		MaleHumanRouge,
@@ -26,7 +44,25 @@ public class CharacterListSO : ScriptableObject {
 		MaleHumanCivilian,
 		FemaleHumanCivilian,
 		MaleHumanChild,
-		FemaleHumanChild,
+		FemaleHumanChild, 
+		MaleDragonbornArtificer,
+		FemaleDragonbornArtificer,
+		MaleDragonbornBard,
+		FemaleDragonbornBard,
+		MaleDragonbornKnight,
+		FemaleDragonbornKnight,
+		MaleDragonbornPaladin,
+		FemaleDragonbornPaladin,
+		MaleDragonbornRanger,
+		FemaleDragonbornRanger,
+		MaleDragonbornRogue,
+		FemaleDragonbornRogue,
+		MaleDragonbornRoyalty,
+		FemaleDragonbornRoyalty,
+		MaleDragonbornWarlock,
+		FemaleDragonbornWarlock,
+		MaleDragonbornWizard,
+		FemaleDragonbornWizard,
 		Null;
 	public static List<Characters> charactersnames = new List<Characters>();
 
@@ -61,6 +97,42 @@ public class CharacterListSO : ScriptableObject {
 				return MaleHumanChild;
 			case Characters.FemaleHumanChild:
 				return FemaleHumanChild;
+			case Characters.MaleDragonbornArtificer:
+				return MaleDragonbornArtificer;
+			case Characters.FemaleDragonbornArtificer:
+				return FemaleDragonbornArtificer;
+			case Characters.MaleDragonbornBard:
+				return MaleDragonbornBard;
+			case Characters.FemaleDragonbornBard:
+				return FemaleDragonbornBard;
+			case Characters.MaleDragonbornKnight:
+				return MaleDragonbornKnight;
+			case Characters.FemaleDragonbornKnight:
+				return FemaleDragonbornKnight;
+			case Characters.MaleDragonbornPaladin:
+				return MaleDragonbornPaladin;
+			case Characters.FemaleDragonbornPaladin:
+				return FemaleDragonbornPaladin;
+			case Characters.MaleDragonbornRanger:
+				return MaleDragonbornRanger;
+			case Characters.FemaleDragonbornRanger:
+				return FemaleDragonbornRanger;
+			case Characters.MaleDragonbornRogue:
+				return MaleDragonbornRogue;
+			case Characters.FemaleDragonbornRogue:
+				return FemaleDragonbornRogue;
+			case Characters.MaleDragonbornRoyalty:
+				return MaleDragonbornRoyalty;
+			case Characters.FemaleDragonbornRoyalty:
+				return FemaleDragonbornRoyalty;
+			case Characters.MaleDragonbornWarlock:
+				return MaleDragonbornWarlock;
+			case Characters.FemaleDragonbornWarlock:
+				return FemaleDragonbornWarlock;
+			case Characters.MaleDragonbornWizard:
+				return MaleDragonbornWizard;
+			case Characters.FemaleDragonbornWizard:
+				return FemaleDragonbornWizard;
 		}
 	}
 

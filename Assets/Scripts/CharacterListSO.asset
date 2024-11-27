@@ -22,4 +22,22 @@ MonoBehaviour:
   FemaleHumanCivilian: {fileID: 2800000, guid: c563c7d0c02776a4b8b7c3d04282f289, type: 3}
   MaleHumanChild: {fileID: 2800000, guid: 50e565df70d7ca64cb079079bc2d5c52, type: 3}
   FemaleHumanChild: {fileID: 2800000, guid: fcfe0a4a3ba3ad24c9fc2a6aae608db4, type: 3}
+  MaleDragonbornArtificer: {fileID: 2800000, guid: bdf57a602aa470345a0fbf1d3bb5f671, type: 3}
+  FemaleDragonbornArtificer: {fileID: 2800000, guid: c65dbea4331630e4cb7276e66651b538, type: 3}
+  MaleDragonbornBard: {fileID: 2800000, guid: 0202a821a92a41e42baaeb1496fa8c8e, type: 3}
+  FemaleDragonbornBard: {fileID: 2800000, guid: c54104bb7c469ae42afa3e94de622fa8, type: 3}
+  MaleDragonbornKnight: {fileID: 2800000, guid: 9dbaf7ba2367b534eba8275ca0d4b740, type: 3}
+  FemaleDragonbornKnight: {fileID: 2800000, guid: f456bb3aa728ca943a1c4ff8b60ecbc5, type: 3}
+  MaleDragonbornPaladin: {fileID: 2800000, guid: c238ec90036ee0d45941ca064609bdd2, type: 3}
+  FemaleDragonbornPaladin: {fileID: 2800000, guid: d5b5688b692fd5f4ebc6e86f55bbc2cf, type: 3}
+  MaleDragonbornRanger: {fileID: 2800000, guid: 99e713a191a7cc34bb813e771d58ea0a, type: 3}
+  FemaleDragonbornRanger: {fileID: 2800000, guid: 48286306811d6984f83fd73f00d0f1a5, type: 3}
+  MaleDragonbornRogue: {fileID: 2800000, guid: 49899edc13f13044385556e839940ae4, type: 3}
+  FemaleDragonbornRogue: {fileID: 2800000, guid: b7c840c142536c84299174ba52ed92ac, type: 3}
+  MaleDragonbornRoyalty: {fileID: 2800000, guid: dce3165a7cd3bed469b43247324ac3d9, type: 3}
+  FemaleDragonbornRoyalty: {fileID: 2800000, guid: 63e6065179777b544856acf7517dd1c9, type: 3}
+  MaleDragonbornWarlock: {fileID: 2800000, guid: c22a3c77de995704e84e6bfa28693136, type: 3}
+  FemaleDragonbornWarlock: {fileID: 2800000, guid: 87c3e6f7ce0b020429e27087b980109b, type: 3}
+  MaleDragonbornWizard: {fileID: 2800000, guid: bbe49fc76b46ab74580c064e23e14202, type: 3}
+  FemaleDragonbornWizard: {fileID: 2800000, guid: 7962249693367e04998862dc3a599c0d, type: 3}
   Null: {fileID: 2800000, guid: 375c40fbc46a47842a7cdf4bb78cbfc0, type: 3}
