@@ -1,8 +1,10 @@
 using Ink.Parsed;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour
 	[SerializeField] CharacterListSO characters;
 	[SerializeField] BackgroundListSO backgrounds;
 
+	[Header("UI")]
+	[SerializeField] public GameObject PauseMenu;
+	[SerializeField] private Animator animator;
+	[SerializeField] public bool IsGamePaused = false;
+
 	public static List<CharacterListSO.Characters> charactersnames = new List<CharacterListSO.Characters>();
 	public static List<BackgroundListSO.Backgrounds> Backgrounds = new List<BackgroundListSO.Backgrounds>();
 
@@ -45,6 +52,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 		inputfield.SetActive(false);
 		Waiting.SetActive(true);
+		PauseMenu.SetActive(false);
     }
 
     private void newText(object sender, ChatGPTManager.onResponseEventArgs e) {
@@ -106,6 +114,20 @@ public class GameManager : MonoBehaviour
 			inputfield.SetActive(false);
 			ContinueStory();
 		}
+
+		if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
+		{
+			IsGamePaused = !IsGamePaused;
+
+            if (IsGamePaused)
+            {
+                ShowPauseMenu();
+            }
+            else
+            {
+				HidePauseMenu();
+            }
+        }
 	}
 
 	private void ContinueStory() {
@@ -135,5 +157,28 @@ public class GameManager : MonoBehaviour
 		responded = true;
 		textInput.text = "";
 		Waiting.SetActive(true);
+	}
+
+	public void ShowPauseMenu()
+	{
+		PauseMenu.SetActive(true);
+	}
+
+    public void HidePauseMenu()
+	{
+        StartCoroutine(HidePauseMenu_Animate());
+    }
+
+	private IEnumerator HidePauseMenu_Animate()
+	{
+		animator.Play("Paper_Leaving");
+		yield return new WaitForSeconds(0.6f);
+        PauseMenu.SetActive(false);
+
+    }
+
+	public void ExitGame()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 }
