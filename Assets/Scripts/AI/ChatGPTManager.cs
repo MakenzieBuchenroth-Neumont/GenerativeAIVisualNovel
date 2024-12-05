@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using TMPro;
 using System;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
-using UnityEditor.Overlays;
 
 public class ChatGPTManager : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class ChatGPTManager : MonoBehaviour
     }
 
 
-    private OpenAIApi openAI = new OpenAIApi();
+    private OpenAIApi openAI;
     private List<ChatMessage> chatMessages = new List<ChatMessage>();
 
     public void askChatGpt(TextMeshProUGUI newText) {
