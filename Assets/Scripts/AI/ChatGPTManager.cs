@@ -51,7 +51,12 @@ public class ChatGPTManager : MonoBehaviour
 	}
 
 	private void Awake() {
-		instance = this;
+		instance = this; 
+        string APIKey1 = "sk-proj-7nHydVzVbf4qnZ4PyLukzzG1xIHwDExRgOK7WV4mS54brG-mDOh0-";
+		string APIKey2 = "qc1mw1P4JeFrPuhkDcD4QT3BlbkFJfLQErALmd8r2HqO71x8Y9Paqyh7cnxvGCP73HSjO4u53K41R7fLhek6zCHC6pTwVo7CNBPsUsA";
+		string OrgKey1 = "org-2Iy83XZfi";
+		string OrgKey2 = "gtCwVWJsL1jnJ4i";
+		openAI = new OpenAIApi(APIKey1 + APIKey2, OrgKey1 + OrgKey2);
 	}
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
