@@ -7,11 +7,22 @@ public class CharacterListSO : ScriptableObject {
     public enum Characters {
         Null,
         MaleHumanPaladin,
+        FemaleHumanPaladin,
 		MaleHumanRouge,
+		FemaleHumanRouge,
 		MaleHumanWizard,
 		MaleHumanSorcerer,
+		FemaleHumanSorcerer,
 		MaleHumanBard,
+		FemaleHumanBard,
 		MaleHumanArtificer,
+		FemaleHumanArtificer,
+		MaleHumanKnight,
+		FemaleHumanKnight,
+		MaleHumanRanger,
+		FemaleHumanRanger,
+		MaleHumanKing,
+		FemaleHumanQueen,
 		MaleHumanCivilian,
 		FemaleHumanCivilian,
         MaleHumanChild,
@@ -32,15 +43,61 @@ public class CharacterListSO : ScriptableObject {
 		MaleDragonbornWarlock,
 		FemaleDragonbornWarlock,
 		MaleDragonbornWizard,
-		FemaleDragonbornWizard,
-        FemaleHumanChild,
+		FemaleDragonbornWizard, MaleElfPaladin,
+		FemaleElfPaladin,
+		MaleElfRogue,
+		FemaleElfRogue,
+		MaleElfWizard,
+		FemaleElfWizard,
+		MaleElfSorcerer,
+		FemaleElfSorcerer,
+		MaleElfBard,
+		FemaleElfBard,
+		MaleElfArtificer,
+		FemaleElfArtificer,
+		MaleElfKnight,
+		FemaleElfKnight,
+		MaleElfRanger,
+		FemaleElfRanger,
+		MaleElfKing,
+		FemaleElfQueen,
+		MaleElfCivilian,
+		FemaleElfCivilian,
+		Bear,
+		DireWolf,
+		BlueDragon,
+		GoldDragon,
+		GreenDragon,
+		RedDragon,
+		BronzeDragon,
+		GiantEagle,
+		GiantSpider,
+		MaleGoblin,
+		Illithid,
+		ChestMimic,
+		OwlBear,
+		Skeleton,
+		SlimeCube,
+		WingedLion,
+		FemaleHumanChild,
     }
 	public Texture MaleHumanPaladin,
+		FemaleHumanPaladin,
 		MaleHumanRouge,
+		FemaleHumanRouge,
 		MaleHumanWizard,
 		MaleHumanSorcerer,
+		FemaleHumanSorcerer,
 		MaleHumanBard,
+		FemaleHumanBard,
 		MaleHumanArtificer,
+		FemaleHumanArtificer,
+		MaleHumanKnight,
+		FemaleHumanKnight,
+		MaleHumanRanger,
+		FemaleHumanRanger,
+		MaleHumanKing,
+		FemaleHumanQueen,
 		MaleHumanCivilian,
 		FemaleHumanCivilian,
 		MaleHumanChild,
@@ -62,7 +119,43 @@ public class CharacterListSO : ScriptableObject {
 		MaleDragonbornWarlock,
 		FemaleDragonbornWarlock,
 		MaleDragonbornWizard,
-		FemaleDragonbornWizard,
+		FemaleDragonbornWizard, MaleElfPaladin,
+FemaleElfPaladin,
+MaleElfRogue,
+FemaleElfRogue,
+MaleElfWizard,
+		FemaleElfWizard,
+MaleElfSorcerer,
+FemaleElfSorcerer,
+MaleElfBard,
+FemaleElfBard,
+MaleElfArtificer,
+FemaleElfArtificer,
+MaleElfKnight,
+FemaleElfKnight,
+MaleElfRanger,
+FemaleElfRanger,
+MaleElfKing,
+FemaleElfQueen,
+MaleElfCivilian,
+FemaleElfCivilian,
+		Bear,
+		DireWolf,
+		BlueDragon,
+		GoldDragon,
+		GreenDragon,
+		RedDragon,
+		BronzeDragon,
+		GiantEagle,
+		GiantSpider,
+		MaleGoblin,
+		Illithid,
+		ChestMimic,
+		OwlBear,
+		Skeleton,
+		SlimeCube,
+		WingedLion,
+
 		Null;
 	public static List<Characters> charactersnames = new List<Characters>();
 
@@ -133,6 +226,101 @@ public class CharacterListSO : ScriptableObject {
 				return MaleDragonbornWizard;
 			case Characters.FemaleDragonbornWizard:
 				return FemaleDragonbornWizard;
+			case Characters.FemaleHumanPaladin:
+				return FemaleHumanPaladin;
+			case Characters.FemaleHumanRouge:
+				return FemaleHumanRouge;
+			case Characters.FemaleHumanSorcerer:
+				return FemaleHumanSorcerer;
+			case Characters.FemaleHumanBard:
+				return FemaleHumanBard;
+			case Characters.FemaleHumanArtificer:
+				return FemaleHumanArtificer;
+			case Characters.MaleHumanKnight:
+				return MaleHumanKnight;
+			case Characters.FemaleHumanKnight:
+				return FemaleHumanKnight;
+			case Characters.MaleHumanRanger:
+				return MaleHumanRanger;
+			case Characters.FemaleHumanRanger:
+				return FemaleHumanRanger;
+			case Characters.MaleHumanKing:
+				return MaleHumanKing;
+			case Characters.FemaleHumanQueen:
+				return FemaleHumanQueen;
+			case Characters.MaleElfPaladin:
+				return MaleElfPaladin;
+			case Characters.FemaleElfPaladin:
+				return FemaleElfPaladin;
+			case Characters.MaleElfRogue:
+				return MaleElfRogue;
+			case Characters.FemaleElfRogue:
+				return FemaleElfRogue;
+			case Characters.MaleElfWizard:
+				return MaleElfWizard;
+			case Characters.FemaleElfWizard:
+				return FemaleElfWizard;
+			case Characters.MaleElfSorcerer:
+				return MaleElfSorcerer;
+			case Characters.FemaleElfSorcerer:
+				return FemaleElfSorcerer;
+			case Characters.MaleElfBard:
+				return MaleElfBard;
+			case Characters.FemaleElfBard:
+				return FemaleElfBard;
+			case Characters.MaleElfArtificer:
+				return MaleElfArtificer;
+			case Characters.FemaleElfArtificer:
+				return FemaleElfArtificer;
+			case Characters.MaleElfKnight:
+				return MaleElfKnight;
+			case Characters.FemaleElfKnight:
+				return FemaleElfKnight;
+			case Characters.MaleElfRanger:
+				return MaleElfRanger;
+			case Characters.FemaleElfRanger:
+				return FemaleElfRanger;
+			case Characters.MaleElfKing:
+				return MaleElfKing;
+			case Characters.FemaleElfQueen:
+				return FemaleElfQueen;
+			case Characters.MaleElfCivilian:
+				return MaleElfCivilian;
+			case Characters.FemaleElfCivilian:
+				return FemaleElfCivilian;
+			case Characters.Bear:
+				return Bear;
+			case Characters.DireWolf:
+				return DireWolf;
+			case Characters.BlueDragon:
+				return BlueDragon;
+			case Characters.GoldDragon:
+				return GoldDragon;
+			case Characters.GreenDragon:
+				return GreenDragon;
+			case Characters.RedDragon:
+				return RedDragon;
+			case Characters.BronzeDragon:
+				return BronzeDragon;
+			case Characters.GiantEagle:
+				return GiantEagle;
+			case Characters.GiantSpider:
+				return GiantSpider;
+			case Characters.MaleGoblin:
+				return MaleGoblin;
+			case Characters.Illithid:
+				return Illithid;
+			case Characters.ChestMimic:
+				return ChestMimic;
+			case Characters.OwlBear:
+				return OwlBear;
+			case Characters.Skeleton:
+				return Skeleton;
+			case Characters.SlimeCube:
+				return SlimeCube;
+			case Characters.WingedLion:
+				return WingedLion;
+
 		}
 	}
 

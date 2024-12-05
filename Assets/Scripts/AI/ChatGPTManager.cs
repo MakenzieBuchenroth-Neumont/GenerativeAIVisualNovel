@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using TMPro;
 using System;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
-using UnityEditor.Overlays;
 
 public class ChatGPTManager : MonoBehaviour
 {
@@ -68,11 +67,12 @@ public class ChatGPTManager : MonoBehaviour
             foreach (var c in GameManager.charactersnames) {
                 askString += "\"" + c + "\", ";
             }
-            askString += "you have to use one of the given names for Character.If the narrator is speaking say Image is \"Null\" and Name is Narrator, and when making characters give each of them their own unique name just use a Character name for the image used for that character that is closest to what was intended. The names for the backgrounds are ";
+            askString += "you have to use one of the given names for Character.If there is no character needed say Image is \"Null\" and Name is Narrator, and you can use the narrator speaking and a monster Image if it makes sense.when making characters give each of them their own unique name just use a Character name for the image used for that character that is closest to what was intended. The names for the backgrounds are ";
 			foreach (var c in GameManager.Backgrounds) {
 				askString += "\"" + c + "\", ";
 			}
-			askString += "You have to use one of these given names for the Background. two examples are \"Narrator:Null:BirchForest:This is the forest called whispering woods.\" and \"Issac:MaleHumanChild:Village:Hi There, I'm isaac. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.";
+			askString += "You have to use one of these given names for the Background. three examples are \"Narrator:Null:BirchForest:This is the forest called whispering woods.\" and \"Issac:MaleHumanChild:Village:Hi There, I'm isaac. \" and \"Narrator:DireWolf:ForestPath:You slash towards the beast, laying a fatal blow. \". start off with describing the setting, then asking about my character. don't use quotation marks at all.";
+            Debug.Log(askString);
             askChatGpt(askString);
         } else {
             load();
