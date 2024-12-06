@@ -13,11 +13,22 @@ MonoBehaviour:
   m_Name: CharacterListSO
   m_EditorClassIdentifier: 
   MaleHumanPaladin: {fileID: 2800000, guid: c0371706d2da16c45b4d3ac0349e2d6f, type: 3}
+  FemaleHumanPaladin: {fileID: 2800000, guid: 655d3f9a68364d84dbe5d4ed166d58f9, type: 3}
   MaleHumanRouge: {fileID: 2800000, guid: 356730e67ec570f4fb0ebfa565c80bcd, type: 3}
+  FemaleHumanRouge: {fileID: 2800000, guid: d62c8a809d3cb4b4a85c09883140b3b2, type: 3}
   MaleHumanWizard: {fileID: 2800000, guid: 78e906d7f389c6c41a00095c3b5bcd0e, type: 3}
   MaleHumanSorcerer: {fileID: 2800000, guid: 0ae7ae9ea47c1314e8a12411b26e6640, type: 3}
+  FemaleHumanSorcerer: {fileID: 2800000, guid: 436fef511c96bac4bb33cd8ab96c6b5c, type: 3}
   MaleHumanBard: {fileID: 2800000, guid: ad4cb0494d2effb4bb5b208a6cf12909, type: 3}
+  FemaleHumanBard: {fileID: 2800000, guid: 4101920561082d047b95590d672504be, type: 3}
   MaleHumanArtificer: {fileID: 2800000, guid: 1ac525e82791d4d4faa596b3a2a1f336, type: 3}
+  FemaleHumanArtificer: {fileID: 2800000, guid: 0b0919cd727626e43aca6fd91f7f5d7f, type: 3}
+  MaleHumanKnight: {fileID: 2800000, guid: de87d9bd87948c24ebec08d7ea78c7f4, type: 3}
+  FemaleHumanKnight: {fileID: 2800000, guid: f22348f83fb9bbc45b4e2ca0e8a1b5c1, type: 3}
+  MaleHumanRanger: {fileID: 2800000, guid: 8112bff3005b4b145aec404af62e202a, type: 3}
+  FemaleHumanRanger: {fileID: 2800000, guid: 209c9b58dc12a394ca1d568703bd51da, type: 3}
+  MaleHumanKing: {fileID: 2800000, guid: 907ee2857e16f0949a9adcd6efe4e1bc, type: 3}
+  FemaleHumanQueen: {fileID: 2800000, guid: 84280b79a77d7f24481948d1b7ede80d, type: 3}
   MaleHumanCivilian: {fileID: 2800000, guid: c563c7d0c02776a4b8b7c3d04282f289, type: 3}
   FemaleHumanCivilian: {fileID: 2800000, guid: c563c7d0c02776a4b8b7c3d04282f289, type: 3}
   MaleHumanChild: {fileID: 2800000, guid: 50e565df70d7ca64cb079079bc2d5c52, type: 3}
@@ -40,4 +51,40 @@ MonoBehaviour:
   FemaleDragonbornWarlock: {fileID: 2800000, guid: 87c3e6f7ce0b020429e27087b980109b, type: 3}
   MaleDragonbornWizard: {fileID: 2800000, guid: bbe49fc76b46ab74580c064e23e14202, type: 3}
   FemaleDragonbornWizard: {fileID: 2800000, guid: 7962249693367e04998862dc3a599c0d, type: 3}
+  MaleElfPaladin: {fileID: 2800000, guid: 891076c4b537ecb4e955bc4c59b55289, type: 3}
+  FemaleElfPaladin: {fileID: 2800000, guid: cb46f856cb42b9349bf7262759695fa3, type: 3}
+  MaleElfRogue: {fileID: 2800000, guid: b3b61baf8b33fb14d9bfdb9a09174678, type: 3}
+  FemaleElfRogue: {fileID: 2800000, guid: 38a23506a874df041b8f75556060ee72, type: 3}
+  MaleElfWizard: {fileID: 2800000, guid: 792daa554a498ae46862d0ae903a8fcd, type: 3}
+  FemaleElfWizard: {fileID: 2800000, guid: 335d409f95d62384cb1acf20c918e0d0, type: 3}
+  MaleElfSorcerer: {fileID: 2800000, guid: a6cf0ca65e995a54babcba56274f2228, type: 3}
+  FemaleElfSorcerer: {fileID: 2800000, guid: d8ad63e0f4e53a748b5296e349dfd92e, type: 3}
+  MaleElfBard: {fileID: 2800000, guid: 8250399fee090f84791105675a6ac880, type: 3}
+  FemaleElfBard: {fileID: 2800000, guid: d82e2c4e90b849e499d39d6d534908d7, type: 3}
+  MaleElfArtificer: {fileID: 2800000, guid: 5ea27b9f0a164034fb198c3dd5c39f28, type: 3}
+  FemaleElfArtificer: {fileID: 2800000, guid: cf20305488f3eb246b38b0a63ca7f41a, type: 3}
+  MaleElfKnight: {fileID: 2800000, guid: ecdfdc106b5ccb94ca6f078a9bf25686, type: 3}
+  FemaleElfKnight: {fileID: 2800000, guid: af14fa8a275276842962aa604c25fc0b, type: 3}
+  MaleElfRanger: {fileID: 2800000, guid: 1fe5407db6015794490f236c8b11d1d3, type: 3}
+  FemaleElfRanger: {fileID: 2800000, guid: d47d01a108fb5b640bad2cd23c71781f, type: 3}
+  MaleElfKing: {fileID: 2800000, guid: dcd8ece9439dc684ebe5ffabb7baf487, type: 3}
+  FemaleElfQueen: {fileID: 2800000, guid: 474c34f0c450dd24ea779a06e3341220, type: 3}
+  MaleElfCivilian: {fileID: 2800000, guid: bd86978aa78e94d4386dd193c06222d0, type: 3}
+  FemaleElfCivilian: {fileID: 2800000, guid: 27767ab505e1e814c9ade9fadfd7f325, type: 3}
+  Bear: {fileID: 2800000, guid: 1ac9df29b26b9b84ca1d6ec5adafefb3, type: 3}
+  DireWolf: {fileID: 2800000, guid: 46ed7fa74a7c893418b5690a712aa483, type: 3}
+  BlueDragon: {fileID: 2800000, guid: b9ddb406d8410784ab164854045ea862, type: 3}
+  GoldDragon: {fileID: 2800000, guid: 12d7f25130afbb44f8de254bc88e0488, type: 3}
+  GreenDragon: {fileID: 2800000, guid: 9f4c4572e4f35354a8445494c16aa008, type: 3}
+  RedDragon: {fileID: 2800000, guid: 65528c825aef6494d9148068627bd585, type: 3}
+  BronzeDragon: {fileID: 2800000, guid: 6f51ceee6f9ce1a4f92b982d9e9a2a41, type: 3}
+  GiantEagle: {fileID: 2800000, guid: 6fc20b4061c3c6b42be15dcb894e6e4b, type: 3}
+  GiantSpider: {fileID: 2800000, guid: 4209b08fc8f061a4c9e5c33918a9f848, type: 3}
+  MaleGoblin: {fileID: 2800000, guid: e4c64ac33221430488420febbdf0a667, type: 3}
+  Illithid: {fileID: 2800000, guid: b85584672a9564e4b9455eca41ae4556, type: 3}
+  ChestMimic: {fileID: 2800000, guid: 72c482ae1bdefad41927332ec287f5c8, type: 3}
+  OwlBear: {fileID: 2800000, guid: 63a72d6d96e191d46ae7d9fcb50c32e9, type: 3}
+  Skeleton: {fileID: 2800000, guid: 4fafdc68cc498a54dbf36c968a404b34, type: 3}
+  SlimeCube: {fileID: 2800000, guid: 5c9341dfd6de1454c877ef00de1af470, type: 3}
+  WingedLion: {fileID: 2800000, guid: 031281831f44b8c469d4f48cb7f892df, type: 3}
   Null: {fileID: 2800000, guid: 375c40fbc46a47842a7cdf4bb78cbfc0, type: 3}
