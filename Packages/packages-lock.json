@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.iamai-core.iamai-unity": {
+      "version": "https://github.com/iamai-core/iamai-unity.git#Plugin",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d455e0381bf3012f1266ff0ffd2f44a624a8f416"
+    },
     "com.srcnalt.openai-unity": {
       "version": "https://github.com/srcnalt/OpenAI-Unity.git",
       "depth": 0,

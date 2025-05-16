@@ -8,8 +8,8 @@ public class CharacterListSO : ScriptableObject {
         Null,
         MaleHumanPaladin,
         FemaleHumanPaladin,
-		MaleHumanRouge,
-		FemaleHumanRouge,
+		MaleHumanRogue,
+		FemaleHumanRogue,
 		MaleHumanWizard,
 		MaleHumanSorcerer,
 		FemaleHumanSorcerer,
@@ -83,8 +83,8 @@ public class CharacterListSO : ScriptableObject {
     }
 	public Texture MaleHumanPaladin,
 		FemaleHumanPaladin,
-		MaleHumanRouge,
-		FemaleHumanRouge,
+		MaleHumanRogue,
+		FemaleHumanRogue,
 		MaleHumanWizard,
 		MaleHumanSorcerer,
 		FemaleHumanSorcerer,
@@ -172,8 +172,8 @@ FemaleElfCivilian,
 				return Null;
 			case Characters.MaleHumanPaladin:
 				return MaleHumanPaladin;
-			case Characters.MaleHumanRouge:
-				return MaleHumanRouge;
+			case Characters.MaleHumanRogue:
+				return MaleHumanRogue;
 			case Characters.MaleHumanWizard:
 				return MaleHumanWizard;
 			case Characters.MaleHumanSorcerer:
@@ -228,8 +228,8 @@ FemaleElfCivilian,
 				return FemaleDragonbornWizard;
 			case Characters.FemaleHumanPaladin:
 				return FemaleHumanPaladin;
-			case Characters.FemaleHumanRouge:
-				return FemaleHumanRouge;
+			case Characters.FemaleHumanRogue:
+				return FemaleHumanRogue;
 			case Characters.FemaleHumanSorcerer:
 				return FemaleHumanSorcerer;
 			case Characters.FemaleHumanBard:

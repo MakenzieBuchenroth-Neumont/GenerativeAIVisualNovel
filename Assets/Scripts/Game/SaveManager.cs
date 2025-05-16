@@ -29,7 +29,7 @@ public class SaveManager : MonoBehaviour {
 
 	public void setString(DataLabel data, string newString) {
 		PlayerPrefs.SetString(data.ToString(), newString);
-		UpdateData();
+		PlayerPrefs.Save();
 	}
 
 	public void loadSave(int save) {

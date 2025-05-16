@@ -56,9 +56,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void newText(object sender, ChatGPTManager.onResponseEventArgs e) {
-		string[] seperators = { ". ", ".", "\n", "!", "?","*", '"'.ToString()};
-		responded = false;
-		Waiting.SetActive(false);
+		string[] seperators = { ". ", ".", "\n", "!", "?","*", "|", '"'.ToString()};
+
         sentences = e.response.Split(seperators, System.StringSplitOptions.None);
 		currentResponse = 0;
 
@@ -103,7 +102,8 @@ public class GameManager : MonoBehaviour
         {
 			sentences[i] = sentences[i].Insert(sentences[i].Length, ".");
         }
-
+		responded = false;
+		Waiting.SetActive(false);
 		ContinueStory();
     }
 
@@ -150,13 +150,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void respond() {
+	public async void respond() {
 		//Put check if empty
 		inputfield.SetActive(false);
-		ChatGPTManager.instance.askChatGpt(textInput.text);
-		responded = true;
-		textInput.text = "";
 		Waiting.SetActive(true);
+		await ChatGPTManager.instance.askChatGpt((textInput.text)); 
+		responded = false;
+		textInput.text = "";
 	}
 
 	public void ShowPauseMenu()
