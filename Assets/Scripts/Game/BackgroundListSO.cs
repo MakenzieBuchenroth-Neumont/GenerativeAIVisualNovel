@@ -28,9 +28,9 @@ public class BackgroundListSO : ScriptableObject {
 		ForestRuins,
 		SnowyForest,
 		Village,
-		VillageInnInside,
-		VillageTavernInside,
-		VillageShopInside,
+		Inn,
+		Tavern,
+		Shop,
 		Lake,
 		AncientLibrary,
 		UndergroundCavern,
@@ -75,9 +75,9 @@ public class BackgroundListSO : ScriptableObject {
 		ForestRuins,
 		SnowyForest,
 		Village,
-		VillageInnInside,
-		VillageTavernInside,
-		VillageShopInside,
+		Inn,
+		Tavern,
+		Shop,
 		Lake,
 		AncientLibrary,
 		UndergroundCavern,
@@ -151,12 +151,12 @@ public class BackgroundListSO : ScriptableObject {
 				return SnowyForest;
 			case Backgrounds.Village:
 				return Village;
-			case Backgrounds.VillageInnInside:
-				return VillageInnInside;
-			case Backgrounds.VillageTavernInside:
-				return VillageTavernInside;
-			case Backgrounds.VillageShopInside:
-				return VillageShopInside;
+			case Backgrounds.Inn:
+				return Inn;
+			case Backgrounds.Tavern:
+				return Tavern;
+			case Backgrounds.Shop:
+				return Shop;
 			case Backgrounds.Lake:
 				return Lake;
 			case Backgrounds.Beach:

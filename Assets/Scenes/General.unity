@@ -301,6 +301,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1034964428021278537, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1034964428021278537, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
@@ -340,6 +344,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1174825405}
+    - target: {fileID: 1695145920153134980, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
+      propertyPath: m_text
+      value: 'Narrator
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 2047177238900962273, guid: 9b456ebb92819d742be9744857b4df3d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1590,10 +1600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ModelList:
+  - mythomist-7b.Q4_K_M.gguf
+  - mistral-7b-instruct-v0.2.Q4_K_M.gguf
   - Mistral_FYF_7b.Q4_K_M.gguf
-  - UpdatedMistral_FYF_7b.Q4_K_M.gguf
-  - Qwen_Qwen3-8B-Q4_K_M.gguf
-  - Qwen3_8b_FYF.Q4_K_M.gguf
   inGame: 1
 --- !u!4 &1174825406
 Transform:

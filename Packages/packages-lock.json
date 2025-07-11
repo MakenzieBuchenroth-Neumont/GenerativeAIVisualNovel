@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d455e0381bf3012f1266ff0ffd2f44a624a8f416"
+      "hash": "47a1f65b38c88a4d2cd21f930902e5913f820038"
     },
     "com.srcnalt.openai-unity": {
       "version": "https://github.com/srcnalt/OpenAI-Unity.git",

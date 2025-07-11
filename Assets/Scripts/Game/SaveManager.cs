@@ -61,4 +61,8 @@ public class SaveManager : MonoBehaviour {
 				return Messages;
 		}
 	}
+
+	public void exitGame() {
+		Application.Quit();
+	}
 }
